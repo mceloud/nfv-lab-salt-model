@@ -52,7 +52,6 @@ parameters:
     openstack_message_queue_node01_address: 10.167.4.41
     openstack_message_queue_node02_address: 10.167.4.42
     openstack_message_queue_node03_address: 10.167.4.43
-
     openstack_telemetry_address: 10.167.4.75
     openstack_telemetry_node01_address: 10.167.4.76
     openstack_telemetry_node02_address: 10.167.4.77
@@ -70,6 +69,11 @@ parameters:
     opencontrail_control_node01_address: 10.167.4.21
     opencontrail_control_node02_address: 10.167.4.22
     opencontrail_control_node03_address: 10.167.4.23
+
+    opencontrail_data_node01_address: 10.167.5.21
+    opencontrail_data_node02_address: 10.167.5.22
+    opencontrail_data_node03_address: 10.167.5.23
+
     # StackLight monitoring
     stacklight_monitor_address: 10.167.4.70
     stacklight_monitor_node01_address: 10.167.4.71
@@ -84,9 +88,13 @@ parameters:
     stacklight_telemetry_node02_address: 10.167.4.87
     stacklight_telemetry_node03_address: 10.167.4.88
     # openstack compute
-    openstack_compute_node01_single_address: 10.167.4.101
-    openstack_compute_node02_single_address: 10.167.4.102
-    openstack_compute_node03_single_address: 10.167.4.103
+    openstack_compute_node01_single_address: 10.167.5.101
+    openstack_compute_node02_single_address: 10.167.5.102
+    openstack_compute_node03_single_address: 10.167.5.103
+
+    openstack_compute_node01_control_address: 10.167.4.101
+    openstack_compute_node02_control_address: 10.167.4.102
+    openstack_compute_node03_control_address: 10.167.4.103
 
     # openstack service hostnames
     openstack_proxy_hostname: prx
@@ -104,6 +112,10 @@ parameters:
     openstack_message_queue_node01_hostname: msg01
     openstack_message_queue_node02_hostname: msg02
     openstack_message_queue_node03_hostname: msg03
+    openstack_telemetry_hostname: mdb
+    openstack_telemetry_node01_hostname: mdb01
+    openstack_telemetry_node02_hostname: mdb02
+    openstack_telemetry_node03_hostname: mdb03
 
     # opencontrail service hostnames
     opencontrail_analytics_hostname: nal

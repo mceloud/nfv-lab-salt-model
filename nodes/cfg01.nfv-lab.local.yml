@@ -6,5 +6,5 @@ parameters:
     reclass_data_revision: mcp0.5
   linux:
     system:
-    name: cfg01
-    domain: nfv-lab.local
+      name: cfg01
+      domain: nfv-lab.local

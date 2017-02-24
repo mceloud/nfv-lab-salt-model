@@ -19,44 +19,64 @@ parameters:
     cluster_node03_address: ${_param:openstack_control_node03_address}
     opencontrail_compute_address: ${_param:single_address}
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
-##FIXME
- # linux:
- #   network:
- #     interface:
- #       eth0:
- #         enabled: true
- #         type: slave
- #         master: bond1
- #         mtu: 9000
- #         pre_up_cmds:
- #         - /sbin/ethtool --offload eth6 rx off tx off tso off gro off
- #       eth1:
- #         enabled: true
- #         type: slave
- #         master: bond1
- #         mtu: 9000
- #         pre_up_cmds:
- #         - /sbin/ethtool --offload eth7 rx off tx off tso off gro off
- #       bond0:
- #         enabled: true
- #         proto: manual
- #         type: bond
- #         use_interfaces:
- #         - eth0
- #         - eth1
- #         slaves: eth0 eth1
- #         mode: active-backup
- #         mtu: 9000
- #       vhost0:
- #         enabled: true
- #         type: eth
- #         mtu: 9000
- #         address: ${_param:single_address}
- #         netmask: 255.255.255.0
- #         pre_up_cmds:
- #         - /usr/lib/contrail/if-vhost0
- #         use_interfaces:
- #         - bond0
- #         name_servers:
-  #         - 8.8.8.8
-  #         - 8.8.4.4
+ linux:
+   network:
+     interface:
+        eth0:
+          enabled: true
+          type: eth
+          proto: dhcp
+          name: ${_param:deploy_nic}
+       eth1:
+         enabled: true
+         name: ${_param:primary_first_nic}
+         type: slave
+         master: bond0
+         mtu: 9000
+         pre_up_cmds:
+         - /sbin/ethtool --offload eth6 rx off tx off tso off gro off
+       eth2:
+         enabled: true
+         name: ${_param:primary_second_nic}
+         type: slave
+         master: bond0
+         mtu: 9000
+         pre_up_cmds:
+         - /sbin/ethtool --offload eth7 rx off tx off tso off gro off
+       bond0:
+         enabled: true
+         proto: manual
+         type: bond
+         use_interfaces:
+         - eth1
+         - eth2
+         slaves: eth1 eth2
+         mode: active-backup
+         mtu: 9000
+        bond0.2422:
+          enabled: true
+          proto: static
+          type: vlan
+          use_interfaces:
+          - bond0
+          address: ${_param:control_address}
+          netmask: 255.255.255.0
+        bond0.2423:
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - bond0
+       vhost0:
+         enabled: true
+         type: eth
+         mtu: 9000
+         address: ${_param:single_address}
+         netmask: 255.255.255.0
+         pre_up_cmds:
+         - /usr/lib/contrail/if-vhost0
+         use_interfaces:
+         - bond0.2423
+         name_servers:
+          - 8.8.8.8
+          - 8.8.4.4

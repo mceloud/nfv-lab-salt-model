@@ -22,8 +22,8 @@ parameters:
     #linux_repo_refresh_db: True
 
     # infra service addresses
-    infra_config_address: 
-    infra_config_deploy_address: 
+    infra_config_address: 172.16.49.66
+    infra_config_deploy_address: 172.16.49.66
 
     infra_compute_address: 10.167.4.240
     infra_compute_node01_address: 10.167.4.241
@@ -35,6 +35,8 @@ parameters:
     infra_compute_node01_hostname: kvm01
     infra_compute_node02_hostname: kvm02
     infra_compute_node03_hostname: kvm03
+
+    primary_interface: eth0
 
     # openstack service addresses
     openstack_proxy_address: 10.167.4.80
@@ -154,18 +156,18 @@ parameters:
     #ntp_strata_host1:
     #ntp_strata_host2:
 
-    # Interface definitions
-    # linux_dhcp_interface:
-    #   enabled: true
-    #   type: eth
-    #   proto: dhcp
-    # linux_single_interface:
-    #   enabled: true
-    #   type: eth
-    #   proto: static
-    #   address: ${_param:single_address}
-    #   netmask: 255.255.255.0
-    #   gateway: 10.167.4.1
-    #   name_servers:
-    #     - 8.8.8.8
-    #     - 8.8.4.4
+    #Interface definitions
+    linux_dhcp_interface:
+      enabled: true
+      type: eth
+      proto: dhcp
+    linux_single_interface:
+      enabled: true
+      type: eth
+      proto: static
+      address: ${_param:single_address}
+      netmask: 255.255.255.0
+      gateway: 10.167.4.1
+      name_servers:
+        - 8.8.8.8
+        - 8.8.4.4

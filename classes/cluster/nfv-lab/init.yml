@@ -29,9 +29,9 @@ parameters:
     infra_compute_node01_address: 10.167.4.241
     infra_compute_node02_address: 10.167.4.242
     infra_compute_node03_address: 10.167.4.243
-    infra_compute_node01_deploy_address: 
-    infra_compute_node02_deploy_address: 
-    infra_compute_node03_deploy_address: 
+    infra_compute_node01_deploy_address: 172.16.49.67
+    infra_compute_node02_deploy_address: 172.16.49.68
+    infra_compute_node03_deploy_address: 172.16.49.69
     infra_compute_node01_hostname: kvm01
     infra_compute_node02_hostname: kvm02
     infra_compute_node03_hostname: kvm03

@@ -111,6 +111,10 @@ parameters:
           type: bridge
           address: ${_param:deploy_address}
           netmask: 255.255.255.192
+          gateway: 172.16.49.65
+          name_servers:
+          - 8.8.8.8
+          - 8.8.4.4
           use_interfaces:
           - ${_param:deploy_nic}
         bond0:
@@ -139,11 +143,7 @@ parameters:
           type: bridge
           proto: static
           address: ${_param:single_address}
-          gateway: 10.167.4.1
           netmask: 255.255.255.0
-          name_servers:
-          - 8.8.8.8
-          - 8.8.4.4
           use_interfaces:
           - bond0.2422
         br_data:

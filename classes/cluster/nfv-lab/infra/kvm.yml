@@ -53,7 +53,7 @@ parameters:
           disk_profile: xxlarge
           net_profile: default
         openstack.proxy:
-          cpu: 4s
+          cpu: 4
           ram: 4096
           disk_profile: small
           net_profile: default

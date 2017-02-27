@@ -90,19 +90,19 @@ parameters:
   virt:
     nic:
       default:
-        eth1:
+        - name: eth1
           bridge: br_mgm
-        eth0:
+        - name: eth0
           bridge: br_ctl
       opencontrail:
-        eth1:
+        - name: eth0
           bridge: br_mgm
           model: virtio
-        eth0:
+        - name: eth1
           bridge: br_ctl
           model: virtio
-        eth2:
-          brigde: br_data
+        - name: eth2
+          bridge: br_data
           model: virtio
   linux:
     network:

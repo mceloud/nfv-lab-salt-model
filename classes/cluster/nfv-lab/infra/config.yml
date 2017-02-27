@@ -26,6 +26,9 @@ parameters:
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}
     salt_master_host: ${_param:infra_config_address}
+  salt:
+    master:
+      accept_policy: open_mode
   reclass:
     storage:
       node:

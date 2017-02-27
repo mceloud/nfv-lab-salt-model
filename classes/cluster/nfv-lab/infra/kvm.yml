@@ -61,7 +61,7 @@ parameters:
           cpu: 8
           ram: 16384
           disk_profile: small
-          net_profile: default
+          net_profile: opencontrail
         opencontrail.analytics:
           cpu: 8
           ram: 16384
@@ -87,6 +87,23 @@ parameters:
           node:
             prx02:
               provider: kvm03.${_param:cluster_domain}
+  virt:
+    nic:
+      default:
+        eth1:
+          bridge: br_mgm
+        eth0:
+          bridge: br_ctl
+      opencontrail:
+        eth1:
+          bridge: br_mgm
+          model: virtio
+        eth0:
+          bridge: br_ctl
+          model: virtio
+        eth2:
+          brigde: br_data
+          model: virtio
   linux:
     network:
       interface:
@@ -100,11 +117,13 @@ parameters:
           type: eth
           proto: manual
           name: ${_param:primary_first_nic}
+          master: bond0
         eth2:
           enabled: true
           type: eth
           proto: manual
           name: ${_param:primary_second_nic}
+          master: bond0
         br_mgm:
           enabled: true
           proto: static
@@ -149,6 +168,6 @@ parameters:
         br_data:
           enabled: true
           type: bridge
-          proto: static
+          proto: manual
           use_interfaces:
           - bond0.2423

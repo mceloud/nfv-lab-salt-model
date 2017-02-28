@@ -4,6 +4,7 @@ classes:
 - system.salt.master.pkg
 #- system.salt.master.formula.git.foundation
 - system.salt.minion.ca.salt_master
+- system.salt.master.api
 - system.reclass.storage.salt
 - system.reclass.storage.system.physical_control_cluster
 - system.reclass.storage.system.opencontrail_analytics_cluster

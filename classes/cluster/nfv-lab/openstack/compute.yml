@@ -1,6 +1,6 @@
 classes:
 
-- system.linux.system.repo.mcp10
+- system.linux.system.repo.mos92
 
 - system.linux.system.repo.mcp_contrail
 - system.nova.compute.cluster
@@ -22,9 +22,9 @@ parameters:
     deploy_nic: enp5s0f0
     primary_first_nic: enp5s0f1
     primary_second_nic: enp2s0f0
- linux:
-   network:
-     interface:
+  linux:
+    network:
+      interface:
 #        eth0:
 #          enabled: true
 #          type: eth

@@ -129,7 +129,7 @@ parameters:
     opencontrail_control_node01_hostname: ntw01
     opencontrail_control_node02_hostname: ntw02
     opencontrail_control_node03_hostname: ntw03
-    opencontrail_gateway_node01_single_hostname: gtw01
+    opencontrail_gateway_node01_hostname: gtw01
     # stacklight service hostnames
     stacklight_monitor_hostname: mon
     stacklight_monitor_node01_hostname: mon01

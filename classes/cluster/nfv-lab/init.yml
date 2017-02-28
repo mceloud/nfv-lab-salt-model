@@ -71,6 +71,7 @@ parameters:
     opencontrail_control_node01_address: 10.167.4.21
     opencontrail_control_node02_address: 10.167.4.22
     opencontrail_control_node03_address: 10.167.4.23
+    opencontrail_gateway_node01_single_address: 10.167.4.200
 
     opencontrail_data_node01_address: 10.167.5.21
     opencontrail_data_node02_address: 10.167.5.22
@@ -97,8 +98,6 @@ parameters:
     openstack_compute_node01_control_address: 10.167.4.101
     openstack_compute_node02_control_address: 10.167.4.102
     openstack_compute_node03_control_address: 10.167.4.103
-
-    openstack_gateway_node01_single_address: 10.167.4.200
 
     # openstack service hostnames
     openstack_proxy_hostname: prx
@@ -130,7 +129,7 @@ parameters:
     opencontrail_control_node01_hostname: ntw01
     opencontrail_control_node02_hostname: ntw02
     opencontrail_control_node03_hostname: ntw03
-    opencontrail_gateway_node01_single_address: gtw01
+    opencontrail_gateway_node01_single_hostname: gtw01
     # stacklight service hostnames
     stacklight_monitor_hostname: mon
     stacklight_monitor_node01_hostname: mon01

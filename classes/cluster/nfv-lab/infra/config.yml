@@ -79,7 +79,7 @@ parameters:
             control_address: ${_param:openstack_compute_node03_control_address}
             single_address: ${_param:openstack_compute_node03_single_address}
         openstack_gateway_node01:
-          name: ${_param:openstack_gateway_node01_hostname}
+          name: ${_param:opencontrail_gateway_node01_hostname}
           domain: ${_param:cluster_domain}
           classes:
           - cluster.${_param:cluster_name}.opencontrail.gateway

@@ -48,9 +48,9 @@ parameters:
          proto: manual
          type: bond
          use_interfaces:
-         - eth1
-         - eth2
-         slaves: eth1 eth2
+         - ${_param:primary_first_nic}
+         - ${_param:primary_second_nic}
+         slaves: ${_param:primary_first_nic} ${_param:primary_second_nic}
          mode: active-backup
          mtu: 9000
         bond0.2422:
@@ -80,3 +80,12 @@ parameters:
          name_servers:
           - 8.8.8.8
           - 8.8.4.4
+    system:
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+          # Password is cloudlab, comment out, configure your SSH key bellow
+          # and disable password auth
+          password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./

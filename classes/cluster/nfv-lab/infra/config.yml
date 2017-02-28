@@ -77,3 +77,12 @@ parameters:
             linux_system_codename: trusty
             control_address: ${_param:openstack_compute_node03_control_address}
             single_address: ${_param:openstack_compute_node03_single_address}
+        openstack_gateway_node01:
+          name: ${_param:openstack_gateway_node01_hostname}
+          domain: ${_param:cluster_domain}
+          classes:
+          - cluster.${_param:cluster_name}.opencontrail.gateway
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            linux_system_codename: trusty
+            single_address: ${_param:opencontrail_gateway_node01_single_address}

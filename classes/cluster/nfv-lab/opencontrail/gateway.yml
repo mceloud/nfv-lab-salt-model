@@ -1,2 +1,46 @@
 classes:
+- system.salt.control.virt
 - cluster.nfv-lab
+parameters:
+  linux:
+    network:
+      interface:
+        eth0:
+          enabled: true
+          type: eth
+          proto: dhcp
+          name: ${_param:deploy_nic}
+        eth1:
+          enabled: true
+          type: eth
+          proto: manual
+          name: ${_param:primary_first_nic}
+          master: bond0
+        eth0.2422:
+          enabled: true
+          name: ${_param:primary_first_nic}.2422
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - ${_param:primary_first_nic}
+        eth0.2423:
+          name: ${_param:primary_first_nic}.2423
+          enabled: true
+          proto: manual
+          type: vlan
+          use_interfaces:
+          - ${_param:primary_first_nic}
+        br_ctl:
+          enabled: true
+          type: bridge
+          proto: static
+          address: ${_param:single_address}
+          netmask: 255.255.255.0
+          use_interfaces:
+          - ${_param:primary_first_nic}.2422
+        br_data:
+          enabled: true
+          type: bridge
+          proto: manual
+          use_interfaces:
+          - ${_param:primary_first_nic}.2423

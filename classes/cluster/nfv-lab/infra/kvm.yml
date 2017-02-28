@@ -28,13 +28,6 @@ parameters:
     deploy_nic: enp2s0f0
     primary_first_nic: enp2s0f1
     primary_second_nic: enp5s0f0
-  linux:
-    system:
-      pkgs:
-        linux-image-extra-4.8.0-39-generic:
-          version: latest
-        linux-headers-4.8.0-39-generic:
-          version: latest
   salt:
     control:
       size: #RAM 4096,8192,16384,32768,65536
@@ -178,3 +171,21 @@ parameters:
           proto: manual
           use_interfaces:
           - bond0.2423
+    system:
+      package:
+        linux-image-4.8.0-39-generic:
+          version: latest
+        linux-headers-4.8.0-39-generic:
+          version: latest
+        linux-image-extra-4.8.0-39-generic:
+          version: latest
+        linux-headers-4.8.0-39:
+          version: latest
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+          # Password is cloudlab, comment out, configure your SSH key bellow
+          # and disable password auth
+          password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./

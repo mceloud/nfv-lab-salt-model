@@ -19,6 +19,9 @@ parameters:
     cluster_node03_address: ${_param:openstack_control_node03_address}
     opencontrail_compute_address: ${_param:single_address}
     nova_vncproxy_url: http://${_param:openstack_proxy_address}:6080
+    deploy_nic: enp5s0f0
+    primary_first_nic: enp5s0f1
+    primary_second_nic: enp2s0f0
   linux:
     network:
       interface:

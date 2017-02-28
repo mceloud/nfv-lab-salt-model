@@ -22,65 +22,67 @@ parameters:
     deploy_nic: enp5s0f0
     primary_first_nic: enp5s0f1
     primary_second_nic: enp2s0f0
-  linux:
-    network:
-      interface:
-        eth0:
-          enabled: true
-          type: eth
-          proto: dhcp
-          name: ${_param:deploy_nic}
-        eth1:
-          enabled: true
-          name: ${_param:primary_first_nic}
-          type: slave
-          master: bond0
-          mtu: 9000
-          pre_up_cmds:
-          - /sbin/ethtool --offload eth6 rx off tx off tso off gro off
-        eth2:
-          enabled: true
-          name: ${_param:primary_second_nic}
-          type: slave
-          master: bond0
-          mtu: 9000
-          pre_up_cmds:
-          - /sbin/ethtool --offload eth7 rx off tx off tso off gro off
-        bond0:
-          enabled: true
-          proto: manual
-          type: bond
-          use_interfaces:
-          - ${_param:primary_first_nic}
-          - ${_param:primary_second_nic}
-          slaves: ${_param:primary_first_nic} ${_param:primary_second_nic}
-          mode: active-backup
-          mtu: 9000
-        bond0.2422:
-          enabled: true
-          proto: static
-          type: vlan
-          use_interfaces:
-          - bond0
-          address: ${_param:control_address}
-          netmask: 255.255.255.0
-        bond0.2423:
-          enabled: true
-          proto: manual
-          type: vlan
-          use_interfaces:
-          - bond0
-        vhost0:
-          enabled: true
-          type: eth
-          mtu: 9000
-          address: ${_param:single_address}
-          netmask: 255.255.255.0
-          pre_up_cmds:
-          - /usr/lib/contrail/if-vhost0
-          use_interfaces:
-          - bond0.2423
-          name_servers:
+ linux:
+   network:
+     interface:
+#        eth0:
+#          enabled: true
+#          type: eth
+#          proto: dhcp
+#         name: ${_param:deploy_nic}
+#       eth1:
+#         enabled: true
+#         name: ${_param:primary_first_nic}
+#         type: slave
+#         master: bond0
+#         mtu: 9000
+#         pre_up_cmds:
+#         - /sbin/ethtool --offload eth6 rx off tx off tso off gro off
+#       eth2:
+#         enabled: true
+#         name: ${_param:primary_second_nic}
+#         type: slave
+#         master: bond0
+#         mtu: 9000
+#         pre_up_cmds:
+#         - /sbin/ethtool --offload eth7 rx off tx off tso off gro off
+#       bond0:
+#         enabled: true
+#         proto: manual
+#         type: bond
+#         use_interfaces:
+#         - ${_param:primary_first_nic}
+#         - ${_param:primary_second_nic}
+#         slaves: ${_param:primary_first_nic} ${_param:primary_second_nic}
+#         mode: active-backup
+#         mtu: 9000
+#        bond0.2422:
+#          enabled: true
+#          proto: static
+#          type: vlan
+#          use_interfaces:
+#          - bond0
+#          address: ${_param:control_address}
+#          netmask: 255.255.255.0
+#        bond0.2423:
+#          enabled: true
+#          proto: manual
+#          type: vlan
+#          use_interfaces:
+#          - bond0
+       vhost0:
+         enabled: true
+         type: eth
+         mtu: 9000
+         address: ${_param:single_address}
+         netmask: 255.255.255.0
+         pre_up_cmds:
+         - /usr/lib/contrail/if-vhost0
+         post_up_cmds:
+         - ip link set vhost0 address 90:e2:ba:19:c2:19
+#         use_interfaces:
+#         - bond0.2423
+         name_servers:
           - 8.8.8.8
           - 8.8.4.4
     system:
@@ -92,3 +94,25 @@ parameters:
           # Password is cloudlab, comment out, configure your SSH key bellow
           # and disable password auth
           password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
+      kernel:
+        isolcpu: "1,2,3,4,5,7,8,9,10,11"
+        hugepages:
+          large:
+            default: true
+            size: 1G
+            count: 40
+            mount_point: /mnt/hugepages_1G
+  nova:
+    compute:
+      vcpu_pin_set: 1,2,3,4,5,7,8,9,10,11
+      hugepages:
+        mount_points:
+        - path: /mnt/hugepages_1G
+  opencontrail:
+    compute:
+      dpdk:
+        enabled: true
+        taskset: "-c 1,2"
+      interface:
+        mac_address: 90:e2:ba:19:c2:19
+        pci: 0000:05:00.1

@@ -23,6 +23,7 @@ parameters:
     salt_master_base_environment: prd
     reclass_data_repository: "https://github.com/mceloud/nfv-lab-salt-model.git"
     reclass_data_revision: master
+    salt_master_api_port: 8088
     reclass_config_master: ${_param:infra_config_deploy_address}
     single_address: ${_param:infra_config_address}
     deploy_address: ${_param:infra_config_deploy_address}

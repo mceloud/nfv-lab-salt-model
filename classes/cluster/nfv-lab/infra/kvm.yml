@@ -90,12 +90,10 @@ parameters:
   virt:
     nic:
       default:
-        - name: eth0
+        eth1:
           bridge: br_mgm
-          model: virtio
-        - name: eth1
+        eth0:
           bridge: br_ctl
-          model: virtio
       opencontrail:
         - name: eth0
           bridge: br_mgm

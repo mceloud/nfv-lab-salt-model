@@ -2,6 +2,9 @@ classes:
 - system.salt.control.virt
 - cluster.nfv-lab
 parameters:
+  _param:
+    deploy_nic: enp9s0f0
+    primary_first_nic: enp9s0f1
   linux:
     network:
       interface:

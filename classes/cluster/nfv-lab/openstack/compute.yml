@@ -3,6 +3,8 @@ classes:
 - system.linux.system.repo.mos92
 
 - system.linux.system.repo.mcp_contrail
+- system.nova.compute.nfv.hugepages
+- system.nova.compute.nfv.cpu_pinning
 - system.nova.compute.cluster
 - system.opencontrail.compute.cluster
 - system.ceilometer.agent.cluster
@@ -94,20 +96,6 @@ parameters:
           # Password is cloudlab, comment out, configure your SSH key bellow
           # and disable password auth
           password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
-      kernel:
-        isolcpu: "1,2,3,4,5,7,8,9,10,11"
-        hugepages:
-          large:
-            default: true
-            size: 1G
-            count: 40
-            mount_point: /mnt/hugepages_1G
-  nova:
-    compute:
-      vcpu_pin_set: 1,2,3,4,5,7,8,9,10,11
-      hugepages:
-        mount_points:
-        - path: /mnt/hugepages_1G
   opencontrail:
     compute:
       dpdk:

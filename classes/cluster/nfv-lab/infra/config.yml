@@ -94,6 +94,6 @@ parameters:
         openstack_telemetry_node02:
           params:
             keepalived_vip_priority: 102
-        openstack_telemetry_node01:
+        openstack_telemetry_node03:
           params:
             keepalived_vip_priority: 101

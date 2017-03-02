@@ -6,7 +6,6 @@ classes:
 - system.memcached.server.single
 - system.linux.system.repo.saltstack_2016_3_trusty 
 - system.ceilometer.client
-- system.ceilometer.client.neutron
 - system.keystone.server.cluster
 - system.glance.control.cluster
 - system.nova.control.cluster

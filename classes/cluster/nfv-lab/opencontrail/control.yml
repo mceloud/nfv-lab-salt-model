@@ -5,6 +5,7 @@ classes:
 - system.linux.system.repo.mcp_contrail
 - system.neutron.control.opencontrail.cluster
 - system.opencontrail.control.control
+- system.ceilometer.client.neutron
 - cluster.nfv-lab
 parameters:
   _param:

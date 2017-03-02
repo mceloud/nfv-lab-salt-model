@@ -88,3 +88,12 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             linux_system_codename: trusty
             single_address: ${_param:opencontrail_gateway_node01_single_address}
+        openstack_telemetry_node01:
+          params:
+            keepalived_vip_priority: 103
+        openstack_telemetry_node02:
+          params:
+            keepalived_vip_priority: 102
+        openstack_telemetry_node01:
+          params:
+            keepalived_vip_priority: 101

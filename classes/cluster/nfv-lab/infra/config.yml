@@ -49,6 +49,13 @@ parameters:
         openstack_database_node01:
           classes:
           - cluster.${_param:cluster_name}.openstack.database_init
+        stacklight_log_node01:
+          classes:
+          - system.elasticsearch.client.single
+        stacklight_monitor_node01:
+          classes:
+          - system.grafana.client.single
+          - system.kibana.client.single
         openstack_compute_node01:
           name: ${_param:openstack_compute_node01_hostname}
           domain: ${_param:cluster_domain}

@@ -1,6 +1,7 @@
 classes:
 - system.linux.system.repo.tcp_elastic
 - system.linux.system.repo.tcp_base
+- system.linux.system.repo.saltstack_2016_3_trusty
 - system.elasticsearch.server.cluster
 - system.haproxy.proxy.listen.elasticsearch
 - service.haproxy.proxy.single

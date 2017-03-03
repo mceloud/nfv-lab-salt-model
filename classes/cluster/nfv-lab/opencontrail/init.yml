@@ -5,7 +5,6 @@ parameters:
     opencontrail_stats_password: password
     opencontrail_compute_dns: 8.8.8.8
     opencontrail_compute_gateway: 10.167.4.1
-    opencontrail_compute_iface: enp5s0f1
     opencontrail_compute_iface_mask: 24
   linux:
     network:

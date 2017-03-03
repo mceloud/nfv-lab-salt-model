@@ -68,6 +68,7 @@ parameters:
             single_address: ${_param:openstack_compute_node01_single_address}
             dpdk_mac_address: 90:e2:ba:19:c2:19
             dpdk_pci: "0000:05:00.1"
+            primary_first_nic: enp5s0f1
         openstack_compute_node02:
           name: ${_param:openstack_compute_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -80,6 +81,7 @@ parameters:
             single_address: ${_param:openstack_compute_node02_single_address}
             dpdk_mac_address: 00:1b:21:87:21:99
             dpdk_pci: "0000:05:00.1"
+            primary_first_nic: enp5s0f1
         openstack_compute_node03:
           name: ${_param:openstack_compute_node03_hostname}
           domain: ${_param:cluster_domain}

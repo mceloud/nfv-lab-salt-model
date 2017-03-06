@@ -82,7 +82,7 @@ parameters:
          pre_up_cmds:
          - /usr/lib/contrail/if-vhost0
          post_up_cmds:
-         - ip link set vhost0 address 90:e2:ba:19:c2:19
+         - ip link set vhost0 address ${_param:dpdk_mac_address}
 #         use_interfaces:
 #         - bond0.2423
          name_servers:

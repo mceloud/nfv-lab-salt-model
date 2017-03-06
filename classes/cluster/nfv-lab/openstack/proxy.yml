@@ -31,4 +31,6 @@ parameters:
       interface:
         eth1: ${_param:linux_single_interface}
     system:
-      package: libapache2-mod-wsgi
+      package:
+        libapache2-mod-wsgi:
+          version: latest

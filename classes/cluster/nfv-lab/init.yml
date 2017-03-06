@@ -169,7 +169,7 @@ parameters:
       proto: static
       address: ${_param:single_address}
       netmask: 255.255.255.0
-      gateway: 10.167.4.1
-      name_servers:
-        - 8.8.8.8
-        - 8.8.4.4
+      # gateway: 10.167.4.1
+      # name_servers:
+      #   - 8.8.8.8
+      #   - 8.8.4.4

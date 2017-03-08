@@ -6,6 +6,7 @@ classes:
 - system.nova.compute.nfv.hugepages
 - system.nova.compute.nfv.cpu_pinning
 - system.nova.compute.cluster
+- system.opencontrail.compute.dpdk
 - system.opencontrail.compute.cluster
 - system.ceilometer.agent.cluster
 - cluster.nfv-lab
@@ -73,19 +74,13 @@ parameters:
 #          type: vlan
 #          use_interfaces:
 #          - bond0
-       vhost0:
-         enabled: true
-         type: eth
-         mtu: 9000
-         address: ${_param:single_address}
-         netmask: 255.255.255.0
-         pre_up_cmds:
-         - /usr/lib/contrail/if-vhost0
-         post_up_cmds:
-         - ip link set vhost0 address ${_param:dpdk_mac_address}
-#         use_interfaces:
-#         - bond0.2423
-         name_servers:
+        vhost0:
+          enabled: true
+          type: eth
+          mtu: 9000
+          address: ${_param:single_address}
+          netmask: 255.255.255.0
+          name_servers:
           - 8.8.8.8
           - 8.8.4.4
     system:
@@ -97,19 +92,3 @@ parameters:
           # Password is cloudlab, comment out, configure your SSH key bellow
           # and disable password auth
           password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
-    system:
-      package:
-        liburcu4:
-          version: 0.9.1-3+tcp1
-  nova:
-    compute:
-      libvirt_service: libvirt-bin
-  opencontrail:
-    compute:
-      dpdk:
-        enabled: true
-        taskset: "-c 1,2"
-        socket_mem: "1024"
-      interface:
-        mac_address: ${_param:dpdk_mac_address}
-        pci: ${_param:dpdk_pci}

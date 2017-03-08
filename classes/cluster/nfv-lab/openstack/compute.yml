@@ -101,6 +101,9 @@ parameters:
       package:
         liburcu4:
           version: 0.9.1-3+tcp1
+  nova:
+    compute:
+      libvirt_service: libvirt-bin
   opencontrail:
     compute:
       dpdk:

@@ -67,7 +67,7 @@ parameters:
             control_address: ${_param:openstack_compute_node01_control_address}
             single_address: ${_param:openstack_compute_node01_single_address}
             dpdk_mac_address: 90:e2:ba:19:c2:19
-            dpdk_pci: "0000:05:00.1"
+            dpdk_pci: "'0000:05:00.1'"
             primary_first_nic: enp5s0f1
         openstack_compute_node02:
           name: ${_param:openstack_compute_node02_hostname}
@@ -80,7 +80,7 @@ parameters:
             control_address: ${_param:openstack_compute_node02_control_address}
             single_address: ${_param:openstack_compute_node02_single_address}
             dpdk_mac_address: 00:1b:21:87:21:99
-            dpdk_pci: "0000:05:00.1"
+            dpdk_pci: "'0000:05:00.1'"
             primary_first_nic: enp5s0f1
         openstack_compute_node03:
           name: ${_param:openstack_compute_node03_hostname}
@@ -93,7 +93,7 @@ parameters:
             control_address: ${_param:openstack_compute_node03_control_address}
             single_address: ${_param:openstack_compute_node03_single_address}
             dpdk_mac_address: 0c:c4:7a:33:27:23
-            dpdk_pci: "0000:0a:00.1"
+            dpdk_pci: "'0000:0a:00.1'"
             primary_first_nic: enp9s0f1
         openstack_gateway_node01:
           name: ${_param:opencontrail_gateway_node01_hostname}

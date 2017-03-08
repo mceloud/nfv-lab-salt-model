@@ -149,6 +149,10 @@ parameters:
     openstack_compute_node02_hostname: cmp002
     openstack_compute_node03_hostname: cmp003
 
+    openstack_gateway_node01_hostname: gtw01
+    openstack_gateway_node01_address: 10.167.4.224
+
+
     ##CI/CD
     #infra_integration_node01_single_address:
     #infra_version_control_node01_single_address:

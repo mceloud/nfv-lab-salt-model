@@ -106,6 +106,7 @@ parameters:
       dpdk:
         enabled: true
         taskset: "-c 1,2"
+        socket_mem: "1024"
       interface:
         mac_address: ${_param:dpdk_mac_address}
         pci: ${_param:dpdk_pci}

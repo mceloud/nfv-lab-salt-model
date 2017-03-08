@@ -1,5 +1,5 @@
 classes:
-- system.salt.control.virt
+#- system.salt.control.virt
 - system.linux.system.repo.saltstack_2016_3_trusty
 - cluster.nfv-lab
 parameters:
@@ -12,7 +12,7 @@ parameters:
         eth0:
           enabled: true
           type: eth
-          proto: dhcp
+          proto: manual
           name: ${_param:deploy_nic}
         eth1:
           enabled: true
@@ -27,13 +27,19 @@ parameters:
           type: vlan
           use_interfaces:
           - ${_param:primary_first_nic}
-        eth0.2423:
-          name: ${_param:primary_first_nic}.2423
+        br_mgm:
           enabled: true
-          proto: manual
-          type: vlan
+          proto: dhcp
+          type: bridge
           use_interfaces:
-          - ${_param:primary_first_nic}
+          - ${_param:deploy_nic}
+        # eth0.2423:
+        #   name: ${_param:primary_first_nic}.2423
+        #   enabled: true
+        #   proto: manual
+        #   type: vlan
+        #   use_interfaces:
+        #   - ${_param:primary_first_nic}
         br_ctl:
           enabled: true
           type: bridge
@@ -42,9 +48,9 @@ parameters:
           netmask: 255.255.255.0
           use_interfaces:
           - ${_param:primary_first_nic}.2422
-        br_data:
-          enabled: true
-          type: bridge
-          proto: manual
-          use_interfaces:
-          - ${_param:primary_first_nic}.2423
+        # br_data:
+        #   enabled: true
+        #   type: bridge
+        #   proto: manual
+        #   use_interfaces:
+        #   - ${_param:primary_first_nic}.2423

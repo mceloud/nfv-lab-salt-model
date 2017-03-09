@@ -16,8 +16,9 @@ parameters:
     stacklight_environment: ${_param:cluster_domain}
     reclass_data_revision: master
     cluster_name: nfv-lab
-    cluster_public_host: public-name
+    cluster_public_host: 10.167.4.10
     infra_config_hostname: cfg01
+    cluster_public_protocol: http
     ##local repositiry for aptly
     #local_repo_url: ip_address
     #linux_repo_refresh_db: True

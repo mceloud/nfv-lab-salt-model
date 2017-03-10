@@ -60,6 +60,10 @@ parameters:
     openstack_telemetry_node02_address: 10.167.4.77
     openstack_telemetry_node03_address: 10.167.4.78
 
+    openstack_dns_address: 10.167.4.85
+    openstack_dns_node01_address: 10.167.4.83
+    openstack_dns_node02_address: 10.167.4.84
+
     # Billing
     #openstack_billing_address:
 

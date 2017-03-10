@@ -11,6 +11,7 @@ parameters:
     rabbitmq_openstack_password: password
     glance_version: ${_param:openstack_version}
     glance_service_host: ${_param:openstack_control_address}
+    designate_service_host: ${_param:openstack_dns_address}
     designate_version: ${_param:openstack_version}
     keystone_version: ${_param:openstack_version}
     keystone_service_host: ${_param:openstack_control_address}

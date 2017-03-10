@@ -4,7 +4,7 @@ classes:
 parameters:
   _param:
     keepalived_vip_interface: ens3
-    keepalived_vip_virtual_router_id: 50
+    keepalived_vip_virtual_router_id: 49
     cluster_vip_address: ${_param:openstack_dns_address}
     cluster_local_address: ${_param:single_address}
     cluster_node01_hostname: dns01

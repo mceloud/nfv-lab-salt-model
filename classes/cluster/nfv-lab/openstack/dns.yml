@@ -1,0 +1,17 @@
+classes:
+- system.designate.server.cluster
+- cluster.nfv-lab
+parameters:
+  _param:
+    keepalived_vip_interface: eth1
+    keepalived_vip_virtual_router_id: 50
+    cluster_vip_address: ${_param:openstack_dns_address}
+    cluster_local_address: ${_param:single_address}
+    cluster_node01_hostname: dns01
+    cluster_node01_address: ${_param:openstack_dns_node01_address}
+    cluster_node02_hostname: dns02
+    cluster_node02_address: ${_param:openstack_dns_node02_address}
+  linux:
+    network:
+      interface:
+        eth1: ${_param:linux_single_interface}

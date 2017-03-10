@@ -16,6 +16,7 @@ classes:
 - system.salt.control.cluster.stacklight_server_cluster
 - system.salt.control.cluster.stacklight_log_cluster
 - system.salt.control.cluster.stacklight_telemetry_cluster
+- system.salt.control.cluster.openstack_dns_cluster
 - cluster.nfv-lab
 parameters:
   _param:
@@ -45,6 +46,11 @@ parameters:
         openstack.message_queue:
           cpu: 6
           ram: 16384
+          disk_profile: small
+          net_profile: default
+        openstack.dns:
+          cpu: 2
+          ram: 4096
           disk_profile: small
           net_profile: default
         openstack.telemetry:

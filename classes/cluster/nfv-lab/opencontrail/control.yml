@@ -1,11 +1,16 @@
 classes:
 
-- system.linux.system.repo.mos92
+- system.linux.system.repo.mcp10
 - system.linux.system.repo.saltstack_2016_3_trusty
 
 - system.linux.system.repo.mcp_contrail
 - system.neutron.control.opencontrail.cluster
 - system.opencontrail.control.control
+- system.opencontrail.client.cluster
+#- system.opencontrail.client.resource.bgp_router
+- system.opencontrail.client.resource.control_node
+- system.opencontrail.client.resource.config_node
+- system.opencontrail.client.resource.database_node
 - system.ceilometer.client.neutron
 - cluster.nfv-lab
 parameters:

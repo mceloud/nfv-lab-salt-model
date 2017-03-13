@@ -1,6 +1,6 @@
 classes:
 - system.linux.system.repo.saltstack_2016_3_trusty
-- system.linux.system.repo.mos92
+- system.linux.system.repo.mcp10
 - system.ceilometer.server.backend.influxdb
 - system.heka.ceilometer_collector.single
 

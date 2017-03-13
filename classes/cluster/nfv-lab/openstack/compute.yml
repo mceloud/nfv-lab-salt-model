@@ -1,6 +1,6 @@
 classes:
 
-- system.linux.system.repo.mos92
+- system.linux.system.repo.mcp10
 
 - system.linux.system.repo.mcp_contrail
 - system.nova.compute.nfv.hugepages
@@ -8,6 +8,8 @@ classes:
 - system.nova.compute.cluster
 - system.opencontrail.compute.dpdk
 - system.opencontrail.compute.cluster
+- system.opencontrail.client.cluster
+- system.opencontrail.client.resource.virtual_router
 - system.ceilometer.agent.cluster
 - cluster.nfv-lab
 parameters:

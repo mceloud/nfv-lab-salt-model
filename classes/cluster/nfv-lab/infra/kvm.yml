@@ -17,6 +17,7 @@ classes:
 - system.salt.control.cluster.stacklight_log_cluster
 - system.salt.control.cluster.stacklight_telemetry_cluster
 - system.salt.control.cluster.openstack_dns_cluster
+- system.salt.control.cluster.infra_cicd_cluster
 - cluster.nfv-lab
 parameters:
   _param:
@@ -87,6 +88,11 @@ parameters:
           cpu: 4
           ram: 4096
           disk_profile: xxlarge
+          net_profile: default
+        infra.cid:
+          cpu: 8
+          ram: 16384
+          disk_profile: large
           net_profile: default
       cluster:
         internal:

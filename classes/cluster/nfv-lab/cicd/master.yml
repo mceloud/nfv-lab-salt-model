@@ -1,0 +1,17 @@
+classes:
+  - cluster.cicd_lab_dev.cicd.control
+  - system.docker.swarm.master
+  # Services
+  - system.docker.client
+  - system.aptly.server.docker
+  - system.aptly.client.publisher
+  # Jenkins
+  - system.jenkins.master.config
+  - system.jenkins.client
+  - system.jenkins.client.credential.gerrit
+  - system.jenkins.client.credential.salt
+  # TODO: jobs
+  # Gerrit
+  - system.gerrit.client
+  - system.gerrit.client.team.mirantis
+  # TODO: projects

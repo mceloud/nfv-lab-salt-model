@@ -9,7 +9,6 @@ classes:
 - cluster.nfv-lab.opencontrail
 - cluster.nfv-lab.stacklight
 - cluster.nfv-lab.stacklight.client
-- cluster.nfv-lab.cicd
 parameters:
   _param:
     openstack_version: mitaka

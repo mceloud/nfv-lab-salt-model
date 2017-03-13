@@ -1,5 +1,6 @@
 classes:
-  - cluster.cicd_lab_dev.cicd.control
+  - cluster.nfv-lab
+  - cluster.nfv-lab.cicd
   - system.docker.swarm.master
   # Services
   - system.docker.client

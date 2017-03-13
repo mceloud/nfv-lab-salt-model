@@ -1,6 +1,4 @@
 classes:
-  - cluster.cicd_lab_dev
-  - cluster.cicd_lab_dev.cicd
 
   # GlusterFS
   - system.glusterfs.server.cluster

@@ -165,6 +165,9 @@ parameters:
 
     cicd:
     cicd_control_hostname: cid
+    cicd_control_node01_hostname: cid01
+    cicd_control_node02_hostname: cid02
+    cicd_control_node03_hostname: cid03
     ##CI/CD
     #infra_integration_node01_single_address:
     #infra_version_control_node01_single_address:

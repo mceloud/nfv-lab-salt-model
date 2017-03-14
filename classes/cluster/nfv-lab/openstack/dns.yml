@@ -1,5 +1,6 @@
 classes:
 - system.designate.server.cluster
+- system.bind.server.single
 - cluster.nfv-lab
 parameters:
   _param:
@@ -20,4 +21,22 @@ parameters:
       backend:
         bind9:
           rndc_key: y1lcmdV1sy4erxYmKaPlnQ==
-
+  bind:
+    server:
+      key:
+        designate:
+          secret: "Ktsigkey.+165+26816"
+          algorithm: hmac-sha512
+      allow-new-zones: true
+      query: true
+      control:
+        local:
+          enabled: true
+          bind:
+            address: ${_param:linux_single_interface}
+            port: 953
+          allow:
+            - 127.0.0.1
+            - ${_param:linux_single_interface}
+          keys:
+            - designate

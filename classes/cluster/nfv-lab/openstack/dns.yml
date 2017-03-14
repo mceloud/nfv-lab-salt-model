@@ -27,7 +27,7 @@ parameters:
         designate:
           secret: "Q27CeyBm9+o6jW6EApkQ9t1KUblTjw=="
           algorithm: hmac-sha512
-      allow-new-zones: true
+      allow_new_zones: true
       query: true
       control:
         local:

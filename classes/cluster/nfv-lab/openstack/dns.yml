@@ -20,12 +20,12 @@ parameters:
     server:
       backend:
         bind9:
-          rndc_key: y1lcmdV1sy4erxYmKaPlnQ==
+          rndc_key: Q27CeyBm9+o6jW6EApkQ9t1KUblTjw==
   bind:
     server:
       key:
         designate:
-          secret: "Ktsigkey.+165+26816"
+          secret: "Q27CeyBm9+o6jW6EApkQ9t1KUblTjw=="
           algorithm: hmac-sha512
       allow-new-zones: true
       query: true

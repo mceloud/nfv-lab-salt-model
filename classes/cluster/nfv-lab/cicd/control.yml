@@ -32,7 +32,9 @@ parameters:
     keepalived_vip_interface: ens3
 
     cluster_vip_address: ${_param:control_vip_address}
+    control_vip_address: ${_param:cicd_control_address}
     cluster_public_host: ${_param:control_public_host}
+    salt_api_password: password
 
     # Docker images and versions
     docker_image_aptly:

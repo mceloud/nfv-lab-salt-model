@@ -90,7 +90,7 @@ parameters:
           ram: 4096
           disk_profile: xxlarge
           net_profile: default
-        infra.cid:
+        cicd.control:
           cpu: 8
           ram: 16384
           disk_profile: large

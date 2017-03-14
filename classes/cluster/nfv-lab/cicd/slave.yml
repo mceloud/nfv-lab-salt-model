@@ -1,4 +1,5 @@
 classes:
-  - cluster.nfv-lab
-  - cluster.nfv-lab.cicd
   - system.docker.swarm.manager
+  - cluster.nfv-lab.cicd.proxy
+  - cluster.nfv-lab.cicd.control
+  - cluster.nfv-lab

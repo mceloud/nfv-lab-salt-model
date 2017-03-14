@@ -1,0 +1,34 @@
+classes:
+  # Keepalived
+  - system.keepalived.cluster.instance.cicd_control_vip
+
+  # HAProxy
+  - system.salt.minion.cert.proxy
+  - system.haproxy.proxy.single
+  - system.haproxy.proxy.listen.cicd.aptly
+  - system.haproxy.proxy.listen.cicd.gerrit
+  - system.haproxy.proxy.listen.cicd.jenkins
+  - system.haproxy.proxy.listen.docker.registry
+  - system.haproxy.proxy.listen.docker.visualizer
+  - system.haproxy.proxy.listen.mysql
+  - system.haproxy.proxy.listen.stats
+parameters:
+  _param:
+    # Haproxy SSL configuration
+    cluster_ssl_certificate:
+      enabled: true
+      pem_file: /etc/haproxy/ssl/${_param:cluster_public_host}-all.pem
+    haproxy_bind_address: ${_param:cluster_vip_address}
+    haproxy_mysql_source_port: 13306
+  salt:
+    minion:
+      cert:
+        proxy:
+          alternative_names: "DNS:${_param:cluster_public_host}, DNS:*.${_param:cluster_public_host}, IP:${_param:control_vip_address}, IP:${_param:single_address}"
+          key_file: /etc/haproxy/ssl/${_param:cluster_public_host}.key
+          cert_file: /etc/haproxy/ssl/${_param:cluster_public_host}.crt
+          all_file: /etc/haproxy/ssl/${_param:cluster_public_host}-all.pem
+          ca_file: /etc/haproxy/ssl/${_param:salt_minion_ca_authority}-ca.crt
+          user: root
+          group: haproxy
+          mode: 640

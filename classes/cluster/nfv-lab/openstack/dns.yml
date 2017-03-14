@@ -33,10 +33,10 @@ parameters:
         local:
           enabled: true
           bind:
-            address: ${_param:linux_single_interface}
+            address: ${_param:single_address}
             port: 953
           allow:
             - 127.0.0.1
-            - ${_param:linux_single_interface}
+            - ${_param:single_address}
           keys:
             - designate

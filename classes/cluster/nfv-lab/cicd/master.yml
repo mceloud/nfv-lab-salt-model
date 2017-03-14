@@ -1,6 +1,6 @@
 classes:
   - system.docker.swarm.master
   - cluster.nfv-lab.cicd.proxy
-  - cluster.nfv-lab.cicd.control
   - cluster.nfv-lab.cicd.control_init
+  - cluster.nfv-lab.cicd.control
   - cluster.nfv-lab

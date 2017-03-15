@@ -8,7 +8,7 @@ classes:
 - system.neutron.control.opencontrail.cluster
 - system.opencontrail.control.control
 - system.opencontrail.client.cluster
-#- system.opencontrail.client.resource.bgp_router
+- system.opencontrail.client.resource.edge_router
 - system.opencontrail.client.resource.control_node
 - system.opencontrail.client.resource.config_node
 - system.opencontrail.client.resource.database_node
@@ -26,6 +26,8 @@ parameters:
     cluster_node02_address: ${_param:opencontrail_control_node02_address}
     cluster_node03_hostname: ntw03
     cluster_node03_address: ${_param:opencontrail_control_node03_address}
+    opencontrail_router01_hostname: vsrx1
+    opencontrail_router01_address: 10.167.4.100
   linux:
     network:
       interface:

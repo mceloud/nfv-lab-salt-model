@@ -8,7 +8,12 @@ classes:
   - system.jenkins.client
   - system.jenkins.client.credential.gerrit
   - system.jenkins.client.credential.salt
-  # TODO: jobs
+  # Jobs
+  - system.jenkins.client.job.aptly
+  - system.jenkins.client.job.git-mirrors.downstream.pipelines
+  - system.jenkins.client.job.deploy.lab.mk.physical
+  - system.jenkins.client.job.deploy.update.package
+  - system.jenkins.client.job.deploy.update.config
   # Gerrit
   - system.gerrit.client
   - system.gerrit.client.team.mirantis

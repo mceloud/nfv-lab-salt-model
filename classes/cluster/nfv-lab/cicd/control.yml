@@ -112,6 +112,11 @@ parameters:
       W4N2eiliSdd5DY6NUs5HJcH8tsxUZ6omhJ/2E5JozQ8WeQdwbe3AvCYRbmU=
       -----END RSA PRIVATE KEY-----
 
+    # Jobs params
+    jenkins_gerrit_url: http://${_param:gerrit_public_host}
+    jenkins_aptly_api_url: http://${_param:haproxy_aptly_api_bind_host}:${_param:haproxy_aptly_api_bind_port}
+    jenkins_aptly_url: http://${_param:haproxy_aptly_public_bind_host}:${_param:haproxy_aptly_public_bind_port}
+
     # Gerrit
     gerrit_auth_type: DEVELOPMENT_BECOME_ANY_ACCOUNT
     gerrit_admin_email: ${_param:admin_email}

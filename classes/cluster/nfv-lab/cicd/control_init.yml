@@ -17,4 +17,4 @@ classes:
   # Gerrit
   - system.gerrit.client
   - system.gerrit.client.team.mirantis
-  # TODO: projects
+  - system.gerrit.client.project.ci

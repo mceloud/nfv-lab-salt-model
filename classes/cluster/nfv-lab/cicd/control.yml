@@ -43,7 +43,7 @@ parameters:
     docker_image_artifactory: tcpcloud/artifactory
     docker_image_registry: registry:2
     docker_image_gerrit: tcpcloud/gerrit:2.12.6
-    docker_image_jenkins: tcpcloud/jenkins
+    docker_image_jenkins: tcpcloud/jenkins:2.50
     docker_registry_http_secret: aikemee4AhK0Eechai2eh6aa3eeWiet9
 
     # CI/CD service databases
@@ -113,7 +113,7 @@ parameters:
       -----END RSA PRIVATE KEY-----
 
     # Jobs params
-    jenkins_gerrit_url: http://${_param:gerrit_public_host}
+    jenkins_gerrit_url: ssh://admin@${_param:gerrit_public_host}:${_param:haproxy_gerrit_ssh_bind_port}
     jenkins_aptly_api_url: http://${_param:haproxy_aptly_api_bind_host}:${_param:haproxy_aptly_api_bind_port}
     jenkins_aptly_url: http://${_param:haproxy_aptly_public_bind_host}:${_param:haproxy_aptly_public_bind_port}
 

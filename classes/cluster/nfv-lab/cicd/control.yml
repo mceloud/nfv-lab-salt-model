@@ -33,7 +33,7 @@ parameters:
 
     cluster_vip_address: ${_param:control_vip_address}
     control_vip_address: ${_param:cicd_control_address}
-    cluster_public_host: ${_param:control_public_host}
+    cluster_public_host: ${_param:control_vip_address}
     salt_api_password: password
 
     # Docker images and versions
@@ -120,7 +120,7 @@ parameters:
     # Gerrit
     gerrit_auth_type: DEVELOPMENT_BECOME_ANY_ACCOUNT
     gerrit_admin_email: ${_param:admin_email}
-    gerrit_public_host: ${_param:cluster_public_host}
+    gerrit_public_host: ${_param:control_vip_address}
     gerrit_admin_public_key: ${_param:jenkins_admin_public_key}
     gerrit_admin_private_key: ${_param:jenkins_admin_private_key}
     gerrit_admin_password: password
